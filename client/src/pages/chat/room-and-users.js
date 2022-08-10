@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import cat from "../../img/cat.gif";
 
 const RoomAndUsers = ({ socket, username, room }) => {
     const [roomUsers, setRoomUsers] = useState([]);
@@ -48,10 +49,12 @@ const RoomAndUsers = ({ socket, username, room }) => {
                     ))}
                 </ul>
             </div>
-
-            <button className="btn btn-outline" onClick={leaveRoom}>
-                Leave
-            </button>
+            <div className={styles.catAndButton}>
+                <img src={cat} alt="cat" className={styles.cat} />
+                <button className="btn btn-outline" onClick={leaveRoom}>
+                    Leave
+                </button>
+            </div>
         </div>
     );
 };

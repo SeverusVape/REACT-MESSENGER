@@ -8,7 +8,7 @@
 
 body {
     overflow: hidden;
-    background: #9cb4cc;
+    background: #041c32;
 }
 
 ::-webkit-scrollbar {
@@ -40,18 +40,20 @@ body {
 }
 
 .btn-outline {
-    color: rgb(153, 217, 234);
-    border: 1px solid rgb(153, 217, 234);
-    background: rgb(63, 73, 204);
+    color: #fff;
+    background: #c84b31;
+    position: relative;
+    top: 45px;
+    left: 5px;
 }
 
 .btn-primary {
-    background: rgb(153, 217, 234);
-    color: rgb(0, 24, 111);
+    background: #c84b31;
+    color: #fff;
 }
 
 .btn-secondary {
-    background: #f37878 /*rgb(0, 24, 111)*/;
+    background: #c84b31;
     color: #fff;
     width: 60%;
 }

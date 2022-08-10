@@ -8,10 +8,11 @@
 
 /* Room and users */
 .roomAndUsersColumn {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid #c84b31;
 }
 
 .roomTitle {
+    margin-top: 20px;
     margin-bottom: 60px;
     text-transform: uppercase;
     font-size: 2rem;
@@ -27,7 +28,7 @@
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 60px;
-    color: rgb(153, 217, 234);
+    color: #c84b31;
 }
 
 .usersList li {
@@ -42,7 +43,7 @@
 }
 
 .message {
-    background: rgb(0, 24, 111);
+    background: #04293a;
     border-radius: 6px;
     margin-bottom: 24px;
     max-width: 600px;
@@ -50,8 +51,9 @@
 }
 
 .msgMeta {
-    color: rgb(153, 217, 234);
+    color: #c74b50;
     font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .msgText {
@@ -70,4 +72,21 @@
     border-radius: 6px;
     border: 1px solid rgb(153, 217, 234);
     font-size: 0.9rem;
+}
+
+.cat {
+    width: 100px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    z-index: 1;
+    /* overflow: unset; */
+}
+
+.catAndButton {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
 }

@@ -2,13 +2,14 @@
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #d3cedf;
 }
 
 .formContainer {
-    width: 400px;
+    width: 430px;
     margin: 0 auto 0 auto;
     padding: 32px;
     background: #9cb4cc;
@@ -33,4 +34,10 @@
 
 .input option {
     margin-top: 20px;
+}
+
+.banner {
+    width: 250px;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }

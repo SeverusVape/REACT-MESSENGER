@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 const Messages = ({ socket }) => {
     const [messagesRecieved, setMessagesReceived] = useState([]);
 
-    const messagesColumnRef = useRef(null);
+    const messagesColumnRef = useRef(null); // Add this
 
     // Runs whenever a socket event is recieved from the server
     useEffect(() => {
@@ -25,19 +25,19 @@ const Messages = ({ socket }) => {
     }, [socket]);
 
     useEffect(() => {
-        socket.on("last_100_messages", (last100messages) => {
-            console.log("last_100_messages:", JSON.parse(last100messages));
-
-            last100messages = JSON.parse(last100messages);
-            // sorting messages
-            last100messages = sortMessagesByDate(last100messages);
-            setMessagesReceived((state) => [...last100messages, ...state]);
+        // Last 100 messages sent in the chat room (fetched from the db in backend)
+        socket.on("last_100_messages", (last100Messages) => {
+            console.log("Last 100 messages:", JSON.parse(last100Messages));
+            last100Messages = JSON.parse(last100Messages);
+            // Sort these messages by __createdtime__
+            last100Messages = sortMessagesByDate(last100Messages);
+            setMessagesReceived((state) => [...last100Messages, ...state]);
         });
 
         return () => socket.off("last_100_messages");
     }, [socket]);
 
-    //Scroll to recent message
+    // Scroll to the most recent message
     useEffect(() => {
         messagesColumnRef.current.scrollTop =
             messagesColumnRef.current.scrollHeight;

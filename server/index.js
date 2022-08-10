@@ -6,6 +6,7 @@ const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
 const harperSaveMessage = require("./services/harper-save-message");
+const harperGetMessages = require("./services/harper-get-messages");
 
 app.use(cors());
 
@@ -53,6 +54,13 @@ io.on("connection", (socket) => {
         chatRoomUsers = allUsers.filter((user) => user.room === room);
         socket.to(room).emit("chatroom_users", chatRoomUsers);
         socket.emit("chatroom_users", chatRoomUsers);
+
+        // get 100   last messages and sent in cahat room
+        harperGetMessages(room)
+            .then((last100Messages) => {
+                socket.emit("last_100_messages", last100Messages);
+            })
+            .catch((err) => console.log(err));
     });
 
     socket.on("send_message", (data) => {

@@ -9,7 +9,6 @@ const Messages = ({ socket }) => {
     // Runs whenever a socket event is recieved from the server
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            console.log(data);
             setMessagesReceived((state) => [
                 ...state,
                 {
@@ -27,7 +26,6 @@ const Messages = ({ socket }) => {
     useEffect(() => {
         // Last 100 messages sent in the chat room (fetched from the db in backend)
         socket.on("last_100_messages", (last100Messages) => {
-            console.log("Last 100 messages:", JSON.parse(last100Messages));
             last100Messages = JSON.parse(last100Messages);
             // Sort these messages by __createdtime__
             last100Messages = sortMessagesByDate(last100Messages);
@@ -65,7 +63,18 @@ const Messages = ({ socket }) => {
                             justifyContent: "space-between",
                         }}
                     >
-                        <span className={styles.msgMeta}>{msg.username}</span>
+                        <span
+                            className={styles.msgMeta}
+                            style={{
+                                color: `${
+                                    msg.username === "ChatBot"
+                                        ? "#c74b50"
+                                        : "#5BB318"
+                                }`,
+                            }}
+                        >
+                            {msg.username}
+                        </span>
                         <span className={styles.msgMeta}>
                             {formatDateFromTimestamp(msg.__createdtime__)}
                         </span>

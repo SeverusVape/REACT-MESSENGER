@@ -8,7 +8,12 @@
 
 /* Room and users */
 .roomAndUsersColumn {
-    border-right: 1px solid #c84b31;
+    border: 1px solid #c84b31;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .roomTitle {
@@ -51,7 +56,7 @@
 }
 
 .msgMeta {
-    color: #c74b50;
+    color: #5bb318;
     font-size: 0.75rem;
     font-weight: 500;
 }

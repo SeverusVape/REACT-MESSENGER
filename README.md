@@ -33,12 +33,12 @@ Simple real-time chat application with chat rooms.
 
 -   First cd into [client] folder:
 
-        ```bash
-        $ cd REACT-MESSENGER-master/
-        $ cd client/
-        $ npm install
-        $ npm start
-        ```
+```bash
+    $ cd REACT-MESSENGER-master/
+    $ cd client/
+    $ npm install
+    $ npm start
+```
 
     app will opens on port http://localhost:3000
 

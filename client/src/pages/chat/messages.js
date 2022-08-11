@@ -67,7 +67,7 @@ const Messages = ({ socket }) => {
                             className={styles.msgMeta}
                             style={{
                                 color: `${
-                                    msg.username === "ChatBot"
+                                    msg.username === "CHAT_BOT 🤖"
                                         ? "#c74b50"
                                         : "#5BB318"
                                 }`,

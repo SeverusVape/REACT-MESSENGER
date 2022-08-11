@@ -21,7 +21,7 @@ const io = new Server(server, {
     },
 });
 
-const CHAT_BOT = "ChatBot";
+const CHAT_BOT = `CHAT_BOT 🤖`;
 let chatRoom = "";
 let allUsers = [];
 // Listen for when the client connects via socket.io-client
@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
 
         // Send welcome msg to user that just joined chat only
         socket.emit("receive_message", {
-            message: `Welcome ${username}`,
+            message: `Welcome ${username} !`,
             username: CHAT_BOT,
             __createdtime__,
         });

@@ -86,6 +86,19 @@ io.on("connection", (socket) => {
         });
         console.log(`${username} has left the chat`);
     });
+
+    // disconnect event listener from server
+    socket.on("disconnect", () => {
+        console.log("User desconnected fro the chat.");
+        const user = allUsers.find((user) => user.id == socket.id);
+        if (user?.username) {
+            allUsers = leaveRoom(socket.id, allUsers);
+            socket.to(chatRoom).emit("chatroom_users", allUsers);
+            socket.to(chatRoom).emit("receive_message", {
+                message: `${user.username} has disconnected from the chart.`,
+            });
+        }
+    });
 });
 
 server.listen(4000, () => console.log("Server is running on port 4000"));

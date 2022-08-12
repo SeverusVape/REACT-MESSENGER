@@ -8,7 +8,8 @@
 
 /* Room and users */
 .roomAndUsersColumn {
-    border: 1px solid #c84b31;
+    background-color: #2c394b;
+    /* border: 1px solid #c84b31; */
     border-radius: 8px;
     display: flex;
     flex-direction: column;

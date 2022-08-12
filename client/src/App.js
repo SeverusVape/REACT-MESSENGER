@@ -5,7 +5,7 @@ import Chat from "./pages/chat";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:4000"); // Add this -- our server will run on port 4000, so we connect to it from here
+const socket = io.connect("http://localhost:4000");
 
 function App() {
     const [username, setUsername] = useState("");

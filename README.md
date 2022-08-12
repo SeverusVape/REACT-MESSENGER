@@ -39,7 +39,8 @@ Simple real-time chat application with chat rooms.
     $ npm install
     $ npm start
 ```
- app will opens on port http://localhost:3000
+
+app will opens on port http://localhost:3000
 
 -   Then cd into [server] folder:
     This folder will connect your front to back and let interract with DB and Socket.io
@@ -52,4 +53,13 @@ Simple real-time chat application with chat rooms.
 ```
 
 -   To be able to recive and send messages your have to make an acount on HarperDB.
+    -   Create .env file in "REACT-MESSENGER/server/" folder.
     -   Into [.env] file insert URL and PASSWORD from your claster.
+
+REACT-MESSENGER/server/.env
+
+```
+HARPERDB_URL="< here goes your claster URL >"
+HARPERDB_PW="Basic < here goes your claster password >"
+
+```
